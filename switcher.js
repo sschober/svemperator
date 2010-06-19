@@ -15,8 +15,17 @@ function handleMessage(event) {
 	}
 }
 
+var highlighted = false;
+
 function toggleLinkHighlight() {
-    $("a").addClass("highlighted");
+    if(!highlighted){
+        $("a").addClass("highlighted");
+        highlighted=true;
+    }
+    else {
+        $("a").removeClass("highlighted");
+        highlighted=false;
+    }
 }
 
 function checkKeyDown(event) {
