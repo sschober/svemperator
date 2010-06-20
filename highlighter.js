@@ -17,13 +17,25 @@ function handleMessage(event) {
 
 var highlighted = false;
 
+/**
+ * Creates a div element as child of body and positios it absolutely
+ * to the coords of the element.
+ */
+function createHint(index, elem){
+    var elemPos = elem.getBoundingClientRect();
+    $("body").append("<div class='hint'><span class='hint' style='top:"
+                     +elemPos.top+"px;left:"+elemPos.left+"px'>"
+                     +index+"</span></div>");
+}
+
 function toggleLinkHighlight() {
     if(!highlighted){
-        $("a").addClass("highlighted");
+        // Iterates over every anchor an executes the anonymous function
+        var links=$("a").each(function(index){createHint(index,this);});
         highlighted=true;
     }
     else {
-        $("a").removeClass("highlighted");
+        $(".hint").remove();
         highlighted=false;
     }
 }

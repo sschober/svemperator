@@ -17,7 +17,7 @@
 	<key>Chrome</key>
 	<dict>
 		<key>Global Page</key>
-		<string>index.html</string>
+		<string>global.html</string>
 	</dict>
 	<key>Content</key>
 	<dict>
@@ -25,7 +25,7 @@
 		<dict>
 			<key>Start</key>
 			<array>
-				<string>switcher.js</string>
+				<string>highlighter.js</string>
 				<string>jquery-1.4.2.min.js</string>
 			</array>
 		</dict>
